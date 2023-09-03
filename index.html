@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Cairo:wght@300;400;500;600;700;800;900;1000&family=Lobster&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&family=Oswald&family=Pacifico&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+    <title>Yummy 2.0</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="css/all.min.css">
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/media.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<BOdy>
+    <section id="loading" class="d-flex align-items-center justify-content-center">
+        <span class="loader"></span>
+    </section>
+    <header>
+        <div id="sideNav" class="sideNav d-flex">
+            <div id="innerBox" class="innerBox">
+                <nav class="navbar d-flex flex-column justify-content-between  navbar-expand-lg p-3">
+                    <div class="container-fluid">
+                        <ul class="navbar-nav d-flex flex-column justify-content-between  me-auto mb-2 mb-lg-0">
+                            <li class="nav-item " id="searchchoice">
+                                <h6>Search</h6>
+                            </li>
+                            <li class="nav-item " id="Categories">
+                                <h6>Categories</h6>
+                            </li>
+                            <li class="nav-item" id="Area">
+                                <h6>Area</h6>
+                            </li>
+                            <li class="nav-item" id="Ingredients">
+                                <h6>Ingredients</h6>
+                            </li>
+                            <li class="nav-item" id="ContactUs">
+                                <h6>Contact Us</h6>
+                            </li>
+
+
+                        </ul>
+                    </div>
+                    <div class="navFooter">
+                        <div class="socialMedia">
+                            <i class="text-white fa-brands fa-facebook"></i>
+                            <i class="text-white fa-brands fa-twitter"></i>
+                            <i class="text-white fa-solid fa-globe"></i>
+                        </div>
+                        <div>
+                            <p class="text-white">Copyright Â© 2019 All Rights <br>Reserved.</p>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div class="navigate d-flex flex-column justify-content-between ">
+                <div class="logo">
+                    <img src="images/logo.png" class="w-100 p-2 " alt="">
+                </div>
+                <div id="lines" class="lines">
+                    <div class="line line1"></div>
+                    <div class="line line2"></div>
+                    <div class="line line2"></div>
+                    <div class="line line3"></div>
+                </div>
+                <div class="icons mb-4 d-flex flex-column align-items-center ">
+                    <i class="fa-solid fa-globe d-block mb-2"></i>
+                    <i class="fa-solid fa-share-nodes"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div id="firstScreen">
+        <div class="searchInput">
+            <div class="container d-flex justify-content-between p-4">
+                <input type="text" id="nameSearch" class="form-control " placeholder="Search By Name">
+                <input type="text" id="letterSearch" class=" ms-3 form-control" placeholder="Search By First Letter">
+            </div>
+        </div>
+    </div>
+    <!-- Search Meals -->
+    <div class="container py-5">
+        <div class="row g-4 " id="myRow">
+
+        </div>
+    </div>
+
+    <!--End Search Meals -->
+
+
+    <script src="js/index.js"></script>
+</BOdy>
+
+</html>
