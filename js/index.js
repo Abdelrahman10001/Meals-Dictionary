@@ -21,8 +21,8 @@ document.addEventListener("DOMContentLoaded", function () {
     let mealName;
 
     function hideLoading() {
-       
-    
+
+
         // Fade out the loader element
         loader.style.transition = 'opacity 1s';
         loader.style.opacity = '0';
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
         setTimeout(function () {
             loading.remove();
             loader.remove();
-            
+
             // Set body overflow to 'auto' after loading
             document.body.style.overflow = 'auto';
         }, 1050);
@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    fetchName('')
+    // fetchName('') ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
 
     // Fetch meals by first letter
     async function fetchMealsByLetter(letter) {
@@ -414,6 +414,23 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
     }
+
+
+
+    contactUs.addEventListener('click', function () {
+        firstScreen.style.display = 'none';
+        let temp = "";
+        temp += `
+                <div class="col-md-6 text-white  text-center mealItem">
+                   sxlaksjflkasjfjsfjslk
+                </div>
+            `;
+
+        myRow.innerHTML = temp;
+    });
+
+
+
 
 
     // End Loading

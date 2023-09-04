@@ -219,3 +219,20 @@ h4 {
   font-size: 28px;
   font-weight: 500;
 }
+
+/* End */
+
+
+/* Contact */
+
+.marInput{
+  margin: 10px -30px 10px 0px;
+}
+
+.btn-check:focus+.btn, .btn:focus {
+  color: var(--bs-btn-hover-color);
+  background-color: var(--bs-btn-hover-bg);
+  border-color: var(--bs-btn-hover-border-color);
+  outline: 0;
+  box-shadow: var(--bs-btn-focus-box-shadow);
+}
