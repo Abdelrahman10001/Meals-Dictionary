@@ -210,3 +210,11 @@ h4 {
 #myRow img {
   border-radius: 8px;
 }
+
+
+/* Area */
+
+.areaName{
+  font-size: 28px;
+  font-weight: 500;
+}
