@@ -17,11 +17,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const contactUs = document.getElementById("ContactUs");
     const nameInput = document.getElementById("nameInput");
     const nameAlert = document.getElementById("nameAlert");
+    const ageAlert = document.getElementById("ageAlert");
+    const phoneAlert = document.getElementById("phoneAlert");
     const emailInput = document.getElementById("emailInput");
     const phoneInput = document.getElementById("phoneInput");
     const ageInput = document.getElementById("ageInput");
     const passInput = document.getElementById("passInput");
     const repassInput = document.getElementById("repassInput");
+    const contactBtn = document.getElementById("contactBtn");
     let mealList = [];
     let areaList = [];
     let ingredientList = [];
@@ -428,12 +431,39 @@ document.addEventListener("DOMContentLoaded", function () {
         firstScreen.style.display = 'none';
         let temp = "";
         temp += `
-                <div class="col-md-6 text-white  text-center mealItem">
-                   sxlaksjflkasjfjsfjslk
-                </div>
+        <div class="col-lg-5 text-white marInput">
+        <input type="text" placeholder="Enter Your Name" id="nameInput"class="form-control mx-lg-auto w-75">
+        <div id="nameAlert" class="alert alert-danger mx-auto w-75 p-0 mt-2 ">"Special characters and numbers not allowed"</div>
+    </div>
+    <div class="col-lg-5 text-white text-center marInput">
+        <input type="email" placeholder="Enter Your Email" id="emailInput"
+            class="form-control mx-lg-auto w-75">
+            <div id="emailAlert" class="alert alert-danger mx-auto w-75 p-0 mt-2 ">"Email not valid *exemple@yyy.zzz"</div>
+    </div>
+    <div class="col-lg-5 text-white  text-center marInput">
+        <input type="tel" placeholder="Enter Your Phone" id="phoneInput"
+            class="form-control mx-lg-auto w-75">
+            <div id="phoneAlert" class="alert alert-danger mx-auto w-75 p-0 mt-2 ">"Enter valid Phone Number "</div>
+    </div>
+    <div class="col-lg-5 text-white  text-center marInput">
+        <input type="number" placeholder="Enter Your Age" id="ageInput"
+            class="form-control mx-lg-auto w-75">
+            <div id="ageAlert" class="alert alert-danger mx-auto w-75 p-0 mt-2 ">"Enter valid age"</div>
+    </div>
+    <div class="col-lg-5 text-white  text-center marInput">
+        <input type="password" placeholder="Enter Your Password" id="passInput"
+            class="form-control mx-lg-auto w-75">
+            <div id="passAlert" class="alert alert-danger mx-auto w-75 p-0 mt-2 ">"Enter valid password *Minimum eight characters, at least one letter and one number:*"</div>
+    </div>
+    <div class="col-lg-5 text-white  text-center marInput">
+        <input type="password" placeholder="Verify The Password" id="repassInput"
+            class="form-control mx-lg-auto w-75">
+            <div id="repassAlert" class="alert alert-danger mx-auto w-75 p-0 mt-2 ">"Enter valid repassword"</div>
+    </div>
             `;
+            contactBtn.style.display="block"
 
-        myRow.innerHTML = temp;
+            contactRowH.innerHTML = temp;
     });
 
 
@@ -441,9 +471,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     nameInput.addEventListener('keyup', function () {
         if (validName()) {
-           
+            nameAlert.style.display = 'none'
         } else {
-            nameAlert.style.display='block'
+            nameAlert.style.display = 'block'
         }
     })
 
@@ -453,16 +483,84 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
+    emailInput.addEventListener('keyup', function () {
+        if (validEmail()) {
+            emailAlert.style.display = 'none'
+        } else {
+            emailAlert.style.display = 'block'
+        }
+    })
 
+    function validEmail() {
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        return emailRegex.test(emailInput.value)
+    }
 
-    // const nameRegex = /^[A-Za-z\s'-]+$/;
-    // const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    // const phoneNumberRegex = /^\d{3}-\d{3}-\d{4}$/;
-    // const ageRegex = /^(?:[1-9][0-9]?|1[01][0-9]|120)$/;
-    // const password = "your original password"; // Replace with the original password
-    // const reEnteredPasswordRegex = new RegExp(`^${password}$`);
+    phoneInput.addEventListener('keyup', function () {
+        if (validPhone()) {
+            phoneAlert.style.display = 'none'
+            console.log('good')
+        } else {
+            console.log('bad')
+            phoneAlert.style.display = 'block'
+        }
+    })
 
+    function validPhone() {
+        const phoneNumberRegex = /^\d{11}$/;
+        return phoneNumberRegex.test(phoneInput.value)
+    }
 
+    ageInput.addEventListener('keyup', function () {
+        if (validage()) {
+            ageAlert.style.display = 'none'
+        } else {
+            ageAlert.style.display = 'block'
+        }
+    })
+
+    function validage() {
+        const ageRegex = /^(?:[1-9][0-9]?|1[01][0-9]|120)$/;
+        return ageRegex.test(ageInput.value)
+    }
+
+    passInput.addEventListener('keyup', function () {
+        if (validpass()) {
+            passAlert.style.display = 'none'
+        } else {
+            passAlert.style.display = 'block'
+        }
+    })
+
+    function validpass() {
+        const passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+        return passwordPattern.test(passInput.value)
+    }
+
+    repassInput.addEventListener('keyup', function () {
+        if (validrepass()) {
+            repassAlert.style.display = 'none'
+
+        } else {
+            repassAlert.style.display = 'block'
+        }
+        checkFormValidity();
+    })
+
+    function validrepass() {
+        const repasswordPattern = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+        return repasswordPattern.test(repassInput.value)
+    }
+
+    
+    function checkFormValidity() {
+        if (validEmail() && validName() && validPhone() && validage() && validpass() && validrepass()) {
+            console.log('greaaat');
+            contactBtn.removeAttribute("disabled");
+        } else {
+            contactBtn.setAttribute("disabled", "true");
+        }
+    }
 
 
 
