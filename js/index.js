@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
             
             // Set body overflow to 'auto' after loading
             document.body.style.overflow = 'auto';
-        }, 800);
+        }, 1050);
     }
 
     // Add a window.onload event listener
