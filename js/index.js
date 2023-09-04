@@ -110,7 +110,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function displayInstructions(mealDetails) {
         let temp = "";
         let tags = ' ';
-        console.log('disinst')
+        
         if (mealDetails.strTags !== null) {
             tags = mealDetails.strTags;
         }
@@ -312,7 +312,7 @@ document.addEventListener("DOMContentLoaded", function () {
         mealItem.forEach((item, index) => {
             item.addEventListener('click', async function (e) {
                 let mealAreaa = areaList[index].strArea;
-                console.log(mealAreaa);
+                
                 try {
                     const apiResponse = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${mealAreaa}`);
                     const data = await apiResponse.json();
@@ -338,7 +338,7 @@ document.addEventListener("DOMContentLoaded", function () {
             firstScreen.style.display = 'none';
             displayingredients();
             insideIng(ingredientList)
-            console.log(ingredientList);
+          
         } catch (error) {
             console.error("Error fetching meal details:", error);
         }
@@ -357,7 +357,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function displayingredients() {
         let temp = "";
         ingredientList.forEach((meal) => {
-            let truncatedDescription = truncateText(meal.strDescription, 20);
+            let truncatedDescription = truncateText(meal.strDescription, 18);
             temp += `
                 <div class="col-md-3 col-sm-6 text-center mealItem">
                     <div class="item overflow-hidden position-relative text-white">
@@ -376,7 +376,7 @@ document.addEventListener("DOMContentLoaded", function () {
         mealItem.forEach((item, index) => {
             item.addEventListener('click', async function (e) {
                 let mealIngrd = ingredientList[index].strIngredient;
-                console.log(mealIngrd);
+              
                 try {
                     const apiResponse = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${mealIngrd}`);
                     const data = await apiResponse.json();
