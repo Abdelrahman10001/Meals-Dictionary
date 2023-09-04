@@ -20,6 +20,30 @@ document.addEventListener("DOMContentLoaded", function () {
     let ingredientList = [];
     let mealName;
 
+
+       // Fade out the loader element
+    setTimeout(function () {
+      loader.style.transition = 'opacity 1s';
+      loader.style.opacity = '0';
+    }, 1000);
+
+    // After 1000ms (1 second), fade out the loading element and remove it
+    setTimeout(function () {
+      loading.style.transition = 'opacity 1s';
+      loading.style.opacity = '0';
+
+      setTimeout(function () {
+        loading.remove();
+      }, 1000);
+    }, 1000);
+
+    // Set body overflow to 'auto' after both fade-outs are complete
+    setTimeout(function () {
+      document.body.style.overflow = 'auto';
+    }, 2000);
+
+
+
     // Event listener for toggling side navigation
     lines.addEventListener("click", function () {
         sideNav.style.left = sideNav.style.left === "0px" ? "-240px" : "0px";
