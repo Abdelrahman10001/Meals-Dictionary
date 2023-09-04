@@ -20,28 +20,30 @@ document.addEventListener("DOMContentLoaded", function () {
     let ingredientList = [];
     let mealName;
 
+    function hideLoading() {
+       
+    
+        // Fade out the loader element
+        loader.style.transition = 'opacity 1s';
+        loader.style.opacity = '0';
 
-       // Fade out the loader element
-    setTimeout(function () {
-      loader.style.transition = 'opacity 1s';
-      loader.style.opacity = '0';
-    }, 1000);
+        loading.style.transition = 'opacity 1s';
+        loading.style.opacity = '0';
 
-    // After 1000ms (1 second), fade out the loading element and remove it
-    setTimeout(function () {
-      loading.style.transition = 'opacity 1s';
-      loading.style.opacity = '0';
+        setTimeout(function () {
+            loading.remove();
+            loader.remove();
+            
+            // Set body overflow to 'auto' after loading
+            document.body.style.overflow = 'auto';
+        }, 800);
+    }
 
-      setTimeout(function () {
-        loading.remove();
-      }, 1000);
-    }, 1000);
-
-    // Set body overflow to 'auto' after both fade-outs are complete
-    setTimeout(function () {
-      document.body.style.overflow = 'auto';
-    }, 2000);
-
+    // Add a window.onload event listener
+    window.onload = function () {
+        // Wait for at least 3 seconds before hiding the loading element
+        setTimeout(hideLoading, 2000);
+    };
 
 
     // Event listener for toggling side navigation
@@ -134,7 +136,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function displayInstructions(mealDetails) {
         let temp = "";
         let tags = ' ';
-        
+
         if (mealDetails.strTags !== null) {
             tags = mealDetails.strTags;
         }
@@ -274,7 +276,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function display222Instructions(mealDetails) {
         let temp = "";
         let tags = ' ';
-      
+
 
         temp = `
             <div class="col-md-4 col-sm-6">
@@ -336,7 +338,7 @@ document.addEventListener("DOMContentLoaded", function () {
         mealItem.forEach((item, index) => {
             item.addEventListener('click', async function (e) {
                 let mealAreaa = areaList[index].strArea;
-                
+
                 try {
                     const apiResponse = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${mealAreaa}`);
                     const data = await apiResponse.json();
@@ -362,7 +364,7 @@ document.addEventListener("DOMContentLoaded", function () {
             firstScreen.style.display = 'none';
             displayingredients();
             insideIng(ingredientList)
-          
+
         } catch (error) {
             console.error("Error fetching meal details:", error);
         }
@@ -394,13 +396,13 @@ document.addEventListener("DOMContentLoaded", function () {
         });
         myRow.innerHTML = temp;
     }
-    
+
     function insideIng(ingredientList) {
         const mealItem = document.querySelectorAll(".mealItem");
         mealItem.forEach((item, index) => {
             item.addEventListener('click', async function (e) {
                 let mealIngrd = ingredientList[index].strIngredient;
-              
+
                 try {
                     const apiResponse = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${mealIngrd}`);
                     const data = await apiResponse.json();
