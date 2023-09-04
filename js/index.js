@@ -15,6 +15,13 @@ document.addEventListener("DOMContentLoaded", function () {
     const area = document.getElementById("Area");
     const ingredients = document.getElementById("Ingredients");
     const contactUs = document.getElementById("ContactUs");
+    const nameInput = document.getElementById("nameInput");
+    const nameAlert = document.getElementById("nameAlert");
+    const emailInput = document.getElementById("emailInput");
+    const phoneInput = document.getElementById("phoneInput");
+    const ageInput = document.getElementById("ageInput");
+    const passInput = document.getElementById("passInput");
+    const repassInput = document.getElementById("repassInput");
     let mealList = [];
     let areaList = [];
     let ingredientList = [];
@@ -428,6 +435,33 @@ document.addEventListener("DOMContentLoaded", function () {
 
         myRow.innerHTML = temp;
     });
+
+
+    // regex
+
+    nameInput.addEventListener('keyup', function () {
+        if (validName()) {
+           
+        } else {
+            nameAlert.style.display='block'
+        }
+    })
+
+    function validName() {
+        const nameRegex = /^[A-Za-z\s'-]+$/;
+        return nameRegex.test(nameInput.value)
+    }
+
+
+
+
+    // const nameRegex = /^[A-Za-z\s'-]+$/;
+    // const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    // const phoneNumberRegex = /^\d{3}-\d{3}-\d{4}$/;
+    // const ageRegex = /^(?:[1-9][0-9]?|1[01][0-9]|120)$/;
+    // const password = "your original password"; // Replace with the original password
+    // const reEnteredPasswordRegex = new RegExp(`^${password}$`);
+
 
 
 
