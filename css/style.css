@@ -215,7 +215,7 @@ h4 {
 
 /* Area */
 
-.areaName{
+.areaName {
   font-size: 28px;
   font-weight: 500;
 }
@@ -225,15 +225,17 @@ h4 {
 
 /* Contact */
 
-.marInput{
+.marInput {
   margin: 10px -30px 10px 0px;
 }
 
-#contactBtn{
-  display: none;
+#contactBtn {
+  width: 100px;
+  /* display: none; */
 }
 
-.btn-check:focus+.btn, .btn:focus {
+.btn-check:focus+.btn,
+.btn:focus {
   color: var(--bs-btn-hover-color);
   background-color: var(--bs-btn-hover-bg);
   border-color: var(--bs-btn-hover-border-color);
@@ -242,21 +244,26 @@ h4 {
 }
 
 
-#nameAlert{
+#nameAlert {
   display: none;
 }
-#emailAlert{
+
+#emailAlert {
   display: none;
 }
-#phoneAlert{
+
+#phoneAlert {
   display: none;
 }
-#ageAlert{
+
+#ageAlert {
   display: none;
 }
-#passAlert{
+
+#passAlert {
   display: none;
 }
-#repassAlert{
+
+#repassAlert {
   display: none;
 }
