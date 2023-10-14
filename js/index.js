@@ -27,6 +27,9 @@ document.addEventListener("DOMContentLoaded", function () {
     function hideLoading() {
 
 
+
+
+
         // Fade out the loader element
         loader.style.transition = 'opacity 1s';
         loader.style.opacity = '0';
@@ -40,13 +43,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Set body overflow to 'auto' after loading
             document.body.style.overflow = 'auto';
-        }, 1050);
+        }, 1000);
     }
 
     // Add a window.onload event listener
     window.onload = function () {
         // Wait for at least 3 seconds before hiding the loading element
-        setTimeout(hideLoading, 1000);
+        setTimeout(hideLoading, 5000);
     };
 
 
@@ -576,13 +579,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     });
 
-
-
     // regex
-
-
-
-
 
     // End Loading
 });
