@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Add a window.onload event listener
     window.onload = function () {
         // Wait for at least 3 seconds before hiding the loading element
-        setTimeout(hideLoading, 5000);
+        setTimeout(hideLoading, 7000);
     };
 
 
